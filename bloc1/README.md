@@ -8,18 +8,9 @@ Le service étudié est fictif. Les données des clients sont simulées, pour ne
 
 ---
 
-## Ce que fait la chaîne
+## Ce que fait la chaîne 
 
-```
-Sources                      Couche bronze            Couche silver             Couche gold
-───────                      ─────────────            ─────────────             ───────────
-Fichiers de l'application ─┐
-API de collecte ───────────┤  Données brutes,         Données validées,         Table d'analyse :
-Catalogue web (crawling,  ─┼─ archivées telles  ───▶  dédoublonnées,     ───▶  une ligne par client
-  puis scraping)           │  quelles (PostgreSQL     normalisées, rejets       et par date de référence,
-Base métier (SQL) ─────────┤  et MinIO)               tracés                    pseudonymisée
-API Géo (externe) ─────────┘
-```
+![Chaîne de collecte et de préparation du Bloc 1](../docs/chaine_bloc1.png)
 
 Le stockage suit le design pattern **médaillon** (bronze, silver, gold) :
 
