@@ -1,4 +1,4 @@
-﻿# Configuration du tableau de bord : aucune statistique d'utilisation envoyée à Streamlit
+# Configuration du tableau de bord : aucune statistique d'utilisation envoyée à Streamlit
 [browser]
 gatherUsageStats = false
 
