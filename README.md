@@ -13,20 +13,9 @@ Le projet est organisé en deux parties, qui correspondent à deux blocs de comp
 
 ---
 
-## Vue d'ensemble
+## Vue d'ensemble 
 
-```
-                         BLOC 1                                          BLOC 5
-  ┌───────────────────────────────────────────────────┐   ┌─────────────────────────────────────┐
-  │                                                   │   │                                     │
-  │  Fichiers, API de collecte,     bronze ─▶ silver  │   │  Sélection ─▶ Entraînement         │
-  │  catalogue web, base SQL,   ───▶   ─▶ gold       │──▶│      ─▶ Optimisation ─▶ Registre  │
-  │  API Géo                         (PostgreSQL,     │   │                                     │
-  │                                   MinIO)          │   │  API de prédiction, tableau de bord │
-  │                                                   │   │  surveillance, réentraînement       │
-  └───────────────────────────────────────────────────┘   └─────────────────────────────────────┘
-                     Poste local, Docker                          Poste local, puis Google Cloud
-```
+![Architecture du projet](docs/architecture_projet.png)
 
 Le passage d'un bloc à l'autre se fait par un seul point de contact : le Bloc 1 exporte sa table d'analyse dans un fichier CSV daté (`bloc1/exporter_gold.py`), que le Bloc 5 utilise comme jeu de données. Ce fichier fige les données ayant servi à chaque entraînement.
 
