@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /offres/
+Disallow: /admin/
+Crawl-delay: 1

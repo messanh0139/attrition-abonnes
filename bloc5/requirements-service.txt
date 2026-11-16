@@ -1,0 +1,12 @@
+# Dépendances de l'image déployée sur Cloud Run (API, cycle de vie, tableau de bord)
+pandas==2.2.3
+numpy==2.1.3
+scipy==1.14.1
+scikit-learn==1.5.2
+joblib==1.4.2
+xgboost==2.1.2
+fastapi==0.115.4
+uvicorn==0.32.0
+requests==2.32.3
+streamlit==1.39.0
+google-cloud-storage==2.18.2

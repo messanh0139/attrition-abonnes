@@ -1,0 +1,99 @@
+# Intégration et déploiement continus du modèle d'attrition (Bloc 5) sur Google Cloud.
+#   1. tests        : tests automatisés (jeu synthétique, sans accès au cloud)
+#   2. modele       : entraînement sur les données du seau, enregistrement de la nouvelle version
+#                     dans le registre, évaluation et mise en production si elle n'est pas moins bonne
+#   3. deploiement  : image publiée dans Artifact Registry, puis déploiement sur Cloud Run de l'API,
+#                     du tableau de bord et du job mensuel, avec un essai de l'API déployée
+# Authentification par fédération d'identité : aucune clé Google n'est stockée dans le dépôt.
+name: Bloc 5 - modele attrition
+
+on:
+  push:
+    branches: [main]
+    paths: ["bloc5/**", ".github/workflows/ci.yml"]
+  pull_request:
+    paths: ["bloc5/**"]
+  workflow_dispatch:
+
+env:
+  REGION: ${{ vars.GCP_REGION }}
+  PROJET: ${{ vars.GCP_PROJET }}
+  BLOC5_BUCKET: gs://${{ vars.GCP_SEAU }}
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults: {run: {working-directory: bloc5}}
+    env: {BLOC5_BUCKET: ""}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+
+  modele:
+    needs: tests
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions: {contents: read, id-token: write}
+    defaults: {run: {working-directory: bloc5}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_FOURNISSEUR_WIF }}
+          service_account: ${{ secrets.GCP_COMPTE_DEPLOIEMENT }}
+      - run: pip install -r requirements.txt
+      - name: Sélection des variables et comparaison des modèles
+        run: |
+          python selection.py
+          python entrainement.py
+      - name: Optimisation et enregistrement dans le registre
+        run: python optimisation.py
+      - name: Évaluation et mise en production
+        run: python publier_modele.py
+
+  deploiement:
+    needs: modele
+    runs-on: ubuntu-latest
+    permissions: {contents: read, id-token: write}
+    env:
+      IMAGE: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJET }}/attrition/modele-attrition:${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_FOURNISSEUR_WIF }}
+          service_account: ${{ secrets.GCP_COMPTE_DEPLOIEMENT }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Construction et publication de l'image
+        run: |
+          gcloud auth configure-docker $REGION-docker.pkg.dev --quiet
+          docker build -t $IMAGE bloc5
+          docker push $IMAGE
+      - name: Déploiement de l'API de prédiction
+        run: |
+          gcloud run deploy api-attrition --image $IMAGE --region $REGION \
+            --service-account sa-api@$PROJET.iam.gserviceaccount.com \
+            --set-env-vars BLOC5_BUCKET=$BLOC5_BUCKET --set-secrets BLOC5_CLE_API=cle-api:latest \
+            --memory 1Gi --max-instances 3 --allow-unauthenticated --quiet
+      - name: Déploiement du tableau de bord (privé) et du job mensuel
+        run: |
+          URL_API=$(gcloud run services describe api-attrition --region $REGION --format 'value(status.url)')
+          gcloud run deploy tableau-de-bord --image $IMAGE --region $REGION \
+            --service-account sa-tableau@$PROJET.iam.gserviceaccount.com \
+            --command streamlit \
+            --args "run,dashboard.py,--server.port=8080,--server.address=0.0.0.0,--server.headless=true,--browser.gatherUsageStats=false" \
+            --set-env-vars BLOC5_BUCKET=$BLOC5_BUCKET,BLOC5_URL_API=$URL_API --set-secrets BLOC5_CLE_API=cle-api:latest \
+            --memory 1Gi --max-instances 1 --no-allow-unauthenticated --quiet
+          gcloud run jobs deploy cycle-modele --image $IMAGE --region $REGION \
+            --service-account sa-cycle@$PROJET.iam.gserviceaccount.com \
+            --command python --args reentrainement.py \
+            --set-env-vars BLOC5_BUCKET=$BLOC5_BUCKET --memory 2Gi --task-timeout 1800 --quiet
+      - name: Essai de l'API déployée
+        run: |
+          URL_API=$(gcloud run services describe api-attrition --region $REGION --format 'value(status.url)')
+          curl -fsS "$URL_API/sante"

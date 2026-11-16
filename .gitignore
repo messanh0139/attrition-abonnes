@@ -1,0 +1,15 @@
+# Jamais versionnés : secrets, certificats, données personnelles, environnements
+**/secrets/
+**/certs/
+**/env.ps1
+**/.venv/
+**/__pycache__/
+bloc1/donnees/
+bloc1/sauvegardes/
+bloc1/exports/
+bloc5/journaux/
+*.dump
+*.chiffre
+bloc5/modeles/
+bloc5/cache/
+bloc5/resultats/

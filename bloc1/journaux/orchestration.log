@@ -1,0 +1,469 @@
+2026-10-29 18:14:13,247 INFO run 1 démarré (manuel)
+2026-10-29 18:14:15,305 ERROR run 1 en échec : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1037, in send
+    self.connect()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 56, in main
+    lot, _ = crawl_scrape.collecter(delai=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 78, in collecter
+    rp = lire_robots(base)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 29, in lire_robots
+    rp.read()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\robotparser.py", line 63, in read
+    f = urllib.request.urlopen(self.url)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+
+2026-10-29 18:14:15,320 INFO run 1 terminé : echec {}
+2026-10-29 18:14:16,347 INFO run 2 démarré (manuel)
+2026-10-29 18:14:18,395 ERROR run 2 en échec : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1037, in send
+    self.connect()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 56, in main
+    lot, _ = crawl_scrape.collecter(delai=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 78, in collecter
+    rp = lire_robots(base)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 29, in lire_robots
+    rp.read()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\robotparser.py", line 63, in read
+    f = urllib.request.urlopen(self.url)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+
+2026-10-29 18:14:18,409 INFO run 2 terminé : echec {}
+2026-10-29 18:26:34,691 INFO run 3 démarré (manuel)
+2026-10-29 18:26:36,742 ERROR run 3 en échec : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1037, in send
+    self.connect()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 56, in main
+    lot, _ = crawl_scrape.collecter(delai=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 78, in collecter
+    rp = lire_robots(base)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 29, in lire_robots
+    rp.read()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\robotparser.py", line 63, in read
+    f = urllib.request.urlopen(self.url)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+
+2026-10-29 18:26:36,758 INFO run 3 terminé : echec {}
+2026-10-29 18:36:46,997 INFO run 4 démarré (manuel)
+2026-10-29 18:37:09,520 INFO run 4 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 16, "lignes_bronze": 481626}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 18:37:39,673 INFO run 5 démarré (manuel)
+2026-10-29 18:37:54,152 INFO run 5 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "api_geo": {"demandes": 16, "trouvees": 16}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:21:47,536 INFO run 6 démarré (manuel)
+2026-10-29 19:21:49,603 ERROR run 6 en échec : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1037, in send
+    self.connect()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 56, in main
+    lot, _ = crawl_scrape.collecter(delai=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 78, in collecter
+    rp = lire_robots(base)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 29, in lire_robots
+    rp.read()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\robotparser.py", line 63, in read
+    f = urllib.request.urlopen(self.url)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+
+2026-10-29 19:21:49,623 INFO run 6 terminé : echec {}
+2026-10-29 19:21:52,017 INFO run 7 démarré (manuel)
+2026-10-29 19:22:01,100 ERROR run 7 en échec : InsufficientPrivilege: permission denied for table variables_clients
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 74, in main
+    volumes["gold"] = etl.charger_gold(cur, run_id, dates)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\etl.py", line 213, in charger_gold
+    cur.execute(SQL_GOLD, {"d": d, "run": run_id})
+psycopg2.errors.InsufficientPrivilege: permission denied for table variables_clients
+
+
+2026-10-29 19:22:01,105 INFO run 7 terminé : echec {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}}
+2026-10-29 19:22:02,750 INFO run 8 démarré (manuel)
+2026-10-29 19:22:11,957 INFO run 8 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:26:03,463 INFO run 9 démarré (planificateur)
+2026-10-29 19:26:12,778 INFO run 9 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:27:03,129 INFO run 10 démarré (planificateur)
+2026-10-29 19:27:12,291 INFO run 10 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:28:03,055 INFO run 11 démarré (planificateur)
+2026-10-29 19:28:12,351 INFO run 11 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:29:03,013 INFO run 12 démarré (planificateur)
+2026-10-29 19:29:13,466 INFO run 12 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:30:03,022 INFO run 13 démarré (planificateur)
+2026-10-29 19:30:12,243 INFO run 13 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:31:03,042 INFO run 14 démarré (planificateur)
+2026-10-29 19:31:12,471 INFO run 14 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:32:03,091 INFO run 15 démarré (planificateur)
+2026-10-29 19:32:13,080 INFO run 15 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:33:03,043 INFO run 16 démarré (planificateur)
+2026-10-29 19:40:03,413 INFO run 17 démarré (planificateur)
+2026-10-29 19:40:12,680 INFO run 17 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:41:03,478 INFO run 18 démarré (planificateur)
+2026-10-29 19:41:12,631 INFO run 18 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-29 19:42:03,391 INFO run 19 démarré (planificateur)
+2026-10-29 19:42:12,509 INFO run 19 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 05:35:44,569 INFO run 1 démarré (manuel)
+2026-10-30 05:36:15,490 INFO run 1 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 18, "lignes_bronze": 481628}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 05:38:31,480 INFO run 2 démarré (manuel)
+2026-10-30 05:38:49,043 INFO run 2 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "api_geo": {"demandes": 16, "trouvees": 16}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 05:39:06,344 INFO run 3 démarré (manuel)
+2026-10-30 05:39:08,381 ERROR run 3 en échec : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1037, in send
+    self.connect()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 56, in main
+    lot, _ = crawl_scrape.collecter()  # applique le délai demandé par robots.txt
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 78, in collecter
+    rp = lire_robots(base)
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\crawl_scrape.py", line 29, in lire_robots
+    rp.read()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\robotparser.py", line 63, in read
+    f = urllib.request.urlopen(self.url)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+
+2026-10-30 05:39:08,393 INFO run 3 terminé : echec {}
+2026-10-30 05:39:10,725 INFO run 4 démarré (manuel)
+2026-10-30 05:39:23,528 ERROR run 4 en échec : InsufficientPrivilege: permission denied for table variables_clients
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\orchestrer.py", line 74, in main
+    volumes["gold"] = etl.charger_gold(cur, run_id, dates)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\kit_attrition_bloc1\etl.py", line 213, in charger_gold
+    cur.execute(SQL_GOLD, {"d": d, "run": run_id})
+psycopg2.errors.InsufficientPrivilege: permission denied for table variables_clients
+
+
+2026-10-30 05:39:23,538 INFO run 4 terminé : echec {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}}
+2026-10-30 05:39:25,076 INFO run 5 démarré (manuel)
+2026-10-30 05:39:38,360 INFO run 5 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 06:03:02,392 INFO run 6 démarré (planificateur)
+2026-10-30 06:03:17,656 INFO run 6 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 06:04:02,269 INFO run 7 démarré (planificateur)
+2026-10-30 06:04:18,351 INFO run 7 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 06:05:02,326 INFO run 8 démarré (planificateur)
+2026-10-30 06:05:17,492 INFO run 8 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 06:06:02,469 INFO run 9 démarré (planificateur)
+2026-10-30 06:06:15,827 INFO run 9 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 06:07:02,366 INFO run 10 démarré (planificateur)
+2026-10-30 06:07:20,553 INFO run 10 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471625, "evenements_doublons_exacts": 2340, "evenements_valides": 467413, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467413, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 16:45:21,266 INFO run 11 démarré (conteneur)
+2026-10-30 16:45:35,378 INFO run 11 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471626, "evenements_doublons_exacts": 2340, "evenements_valides": 467414, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467414, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 16:59:00,257 INFO run 12 démarré (conteneur)
+2026-10-30 16:59:13,908 INFO run 12 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471627, "evenements_doublons_exacts": 2340, "evenements_valides": 467415, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467415, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 17:04:51,296 INFO run 13 démarré (conteneur)
+2026-10-30 17:05:04,469 INFO run 13 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471628, "evenements_doublons_exacts": 2340, "evenements_valides": 467416, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467416, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 17:12:03,842 INFO run 14 démarré (conteneur)
+2026-10-30 17:12:17,742 INFO run 14 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471629, "evenements_doublons_exacts": 2340, "evenements_valides": 467417, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467417, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 19:48:25,691 INFO run 15 démarré (conteneur)
+2026-10-30 19:48:39,516 INFO run 15 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471630, "evenements_doublons_exacts": 2340, "evenements_valides": 467418, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467418, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 19:55:21,477 INFO run 16 démarré (conteneur)
+2026-10-30 19:55:35,402 INFO run 16 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471631, "evenements_doublons_exacts": 2340, "evenements_valides": 467419, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467419, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 20:07:16,799 INFO run 17 démarré (conteneur)
+2026-10-30 20:07:30,774 INFO run 17 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471632, "evenements_doublons_exacts": 2340, "evenements_valides": 467420, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467420, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 20:08:18,268 INFO run 18 démarré (conteneur)
+2026-10-30 20:08:31,397 INFO run 18 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471633, "evenements_doublons_exacts": 2340, "evenements_valides": 467421, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467421, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-30 20:17:16,501 INFO run 19 démarré (conteneur)
+2026-10-30 20:17:29,689 INFO run 19 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471634, "evenements_doublons_exacts": 2340, "evenements_valides": 467422, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467422, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-31 18:10:57,631 INFO run 20 démarré (manuel)
+2026-10-31 18:11:15,635 INFO run 20 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "api_geo": {"demandes": 16, "trouvees": 16}, "bronze": {"fichiers_nouveaux": 2, "lignes_bronze": 2}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471634, "evenements_doublons_exacts": 2340, "evenements_valides": 467422, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467422, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-31 17:23:10,737 INFO run 21 démarré (conteneur)
+2026-10-31 17:23:24,897 INFO run 21 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-10-31 18:46:58,021 INFO run 22 démarré (manuel)
+2026-10-31 18:47:18,062 INFO run 22 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "api_geo": {"demandes": 16, "trouvees": 16}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-01 02:55:05,804 INFO run 23 démarré (planificateur)
+2026-11-01 02:55:28,203 INFO run 23 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-01 03:05:37,803 INFO run 24 démarré (planificateur)
+2026-11-01 03:05:57,104 INFO run 24 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 09:19:31,001 INFO run 25 démarré (planificateur)
+2026-11-02 09:19:52,825 INFO run 25 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 10:19:14,898 INFO run 26 démarré (planificateur)
+2026-11-02 10:19:28,895 INFO run 26 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 11:19:14,726 INFO run 27 démarré (planificateur)
+2026-11-02 11:19:29,389 INFO run 27 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 12:19:14,869 INFO run 28 démarré (planificateur)
+2026-11-02 12:19:29,238 INFO run 28 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 13:19:14,836 INFO run 29 démarré (planificateur)
+2026-11-02 13:19:29,139 INFO run 29 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 14:19:14,864 INFO run 30 démarré (planificateur)
+2026-11-02 14:19:30,992 INFO run 30 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 15:19:15,116 INFO run 31 démarré (planificateur)
+2026-11-02 15:19:29,169 INFO run 31 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 16:19:14,728 INFO run 32 démarré (planificateur)
+2026-11-02 16:19:35,173 INFO run 32 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-02 17:19:15,048 INFO run 33 démarré (planificateur)
+2026-11-02 17:19:39,488 INFO run 33 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 09:00:04,695 INFO run 34 démarré (planificateur)
+2026-11-03 09:00:30,440 INFO run 34 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 09:19:14,792 INFO run 35 démarré (planificateur)
+2026-11-03 09:19:35,611 INFO run 35 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 10:19:14,954 INFO run 36 démarré (planificateur)
+2026-11-03 10:19:28,815 INFO run 36 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 11:19:15,859 INFO run 37 démarré (planificateur)
+2026-11-03 11:19:29,695 INFO run 37 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 12:19:14,910 INFO run 38 démarré (planificateur)
+2026-11-03 12:19:28,765 INFO run 38 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 13:19:14,971 INFO run 39 démarré (planificateur)
+2026-11-03 13:19:28,791 INFO run 39 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-03 14:19:14,874 INFO run 40 démarré (planificateur)
+2026-11-03 14:19:34,507 INFO run 40 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 12:32:14,407 INFO run 41 démarré (planificateur)
+2026-11-08 12:32:41,926 INFO run 41 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 13:19:15,821 INFO run 42 démarré (planificateur)
+2026-11-08 13:19:30,971 INFO run 42 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 14:19:14,736 INFO run 43 démarré (planificateur)
+2026-11-08 14:19:28,987 INFO run 43 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 15:19:14,719 INFO run 44 démarré (planificateur)
+2026-11-08 15:19:28,841 INFO run 44 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 16:19:14,713 INFO run 45 démarré (planificateur)
+2026-11-08 16:19:28,800 INFO run 45 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 17:19:14,763 INFO run 46 démarré (planificateur)
+2026-11-08 17:19:28,768 INFO run 46 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 18:19:14,812 INFO run 47 démarré (planificateur)
+2026-11-08 18:19:28,982 INFO run 47 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 19:19:14,867 INFO run 48 démarré (planificateur)
+2026-11-08 19:19:38,801 INFO run 48 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 20:19:14,820 INFO run 49 démarré (planificateur)
+2026-11-08 20:19:28,870 INFO run 49 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 21:19:14,776 INFO run 50 démarré (planificateur)
+2026-11-08 21:19:28,906 INFO run 50 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-08 22:19:14,743 INFO run 51 démarré (planificateur)
+2026-11-08 22:19:30,813 INFO run 51 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-10 14:19:27,143 INFO run 84 démarré (planificateur)
+2026-11-10 14:19:58,873 INFO run 84 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-10 15:19:15,401 INFO run 85 démarré (planificateur)
+2026-11-10 15:19:45,544 INFO run 85 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-10 16:19:15,476 INFO run 86 démarré (planificateur)
+2026-11-10 16:19:38,527 INFO run 86 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-10 17:19:16,071 INFO run 87 démarré (planificateur)
+2026-11-10 17:19:30,675 INFO run 87 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-13 09:09:29,363 INFO run 88 démarré (planificateur)
+2026-11-13 09:10:33,198 INFO run 88 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 11:19:25,663 INFO run 121 démarré (planificateur)
+2026-11-16 11:19:46,726 INFO run 121 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 1, "lignes_bronze": 1}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 12:19:13,931 INFO run 122 démarré (planificateur)
+2026-11-16 12:19:38,242 INFO run 122 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 13:19:13,955 INFO run 123 démarré (planificateur)
+2026-11-16 13:19:38,544 INFO run 123 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 14:19:14,039 INFO run 124 démarré (planificateur)
+2026-11-16 14:19:38,680 INFO run 124 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 15:19:13,995 INFO run 125 démarré (planificateur)
+2026-11-16 15:19:28,263 INFO run 125 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 16:19:14,330 INFO run 126 démarré (planificateur)
+2026-11-16 16:19:34,151 INFO run 126 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 17:19:14,477 INFO run 127 démarré (planificateur)
+2026-11-16 17:19:28,330 INFO run 127 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 18:19:13,775 INFO run 128 démarré (planificateur)
+2026-11-16 18:19:33,769 INFO run 128 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}
+2026-11-16 19:19:14,017 INFO run 129 démarré (planificateur)
+2026-11-16 19:19:34,037 INFO run 129 terminé : succes {"catalogue": {"pages": 4, "anomalies": 1}, "bronze": {"fichiers_nouveaux": 0, "lignes_bronze": 0}, "silver": {"offres": 3, "communes_corrigees": 248, "clients": 5000, "abonnements": 4995, "abonnements_rejetes": 5, "evenements_recus": 471635, "evenements_doublons_exacts": 2340, "evenements_valides": 467423, "evenements_rejetes": 1872}, "gold": {"lignes_gold": 38495, "dates_reference": 11}, "qualite": {"clients": 5000, "abonnements": 4995, "evenements": 467423, "offres": 3, "lignes_gold": 38495, "evenements_orphelins": 0, "abonnements_sans_offre": 0, "prix_non_positifs": 0, "doublons_gold": 0, "chronologie_incoherente": 0, "evenements_apres_resiliation": 0}}

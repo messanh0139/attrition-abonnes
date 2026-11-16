@@ -1,0 +1,149 @@
+# Architecture en trois zones, chacune dans son propre réseau Docker :
+#   zone d'accès       10.40.10.0/24  passerelle HTTPS (seul port exposé) et API de collecte
+#   zone des traitements 10.40.20.0/24  orchestrateur ETL et source du catalogue
+#   zone des données   10.40.30.0/24  PostgreSQL et MinIO
+# Un conteneur ne peut joindre que les zones auxquelles il est rattaché.
+# - Chiffrement TLS obligatoire vers PostgreSQL, MinIO et la passerelle.
+# - Objets MinIO chiffrés au repos (clé fournie par un fichier secret).
+# - Ports publiés uniquement sur 127.0.0.1 (administration depuis le poste local).
+# Prérequis : python generer_certificats.py (certificats TLS et clés, création incrémentale).
+# Profils : minio (stockage objet), acces (passerelle et API), traitements (ETL en conteneur).
+services:
+  postgres:
+    image: postgres:16.4
+    environment:
+      POSTGRES_DB: attrition
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_admin
+    secrets: [pg_admin]
+    # Copie du certificat avec les droits exigés par PostgreSQL, puis démarrage avec TLS activé.
+    # Forme en liste : la commande bash reste sur une seule ligne logique.
+    command:
+      - bash
+      - -c
+      - >-
+        cp /certs/server.crt /certs/server.key /var/lib/postgresql/ &&
+        chown postgres:postgres /var/lib/postgresql/server.crt /var/lib/postgresql/server.key &&
+        chmod 600 /var/lib/postgresql/server.key &&
+        exec docker-entrypoint.sh postgres -c ssl=on
+        -c ssl_cert_file=/var/lib/postgresql/server.crt
+        -c ssl_key_file=/var/lib/postgresql/server.key
+        -c ssl_min_protocol_version=TLSv1.2
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro       # schéma, rôles, TLS obligatoire (premier démarrage)
+      - ./certs/postgres:/certs:ro
+    networks:
+      donnees: {ipv4_address: 10.40.30.10}
+    ports: ["127.0.0.1:${PG_HOST_PORT:-5433}:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d attrition"]
+      interval: 10s
+      retries: 5
+
+  minio:
+    profiles: [minio]
+    image: ${MINIO_IMAGE:-minio/minio:latest}
+    command: server /data --console-address ":9001" --certs-dir /certs
+    environment:
+      MINIO_ROOT_USER_FILE: /run/secrets/minio_user
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_password
+      MINIO_KMS_SECRET_KEY_FILE: /run/secrets/minio_kms    # chiffrement des objets au repos
+    secrets: [minio_user, minio_password, minio_kms]
+    volumes:
+      - miniodata:/data
+      - ./certs/minio:/certs:ro                            # public.crt et private.key (TLS)
+    networks:
+      donnees: {ipv4_address: 10.40.30.20}
+    ports: ["127.0.0.1:9000:9000", "127.0.0.1:9001:9001"]
+
+  api_collecte:
+    profiles: [acces]
+    build: ./api_collecte
+    # Rattachée à la zone d'accès et à la zone des données (écriture en bronze avec r_ingestion).
+    # Aucun port publié : elle n'est joignable que par la passerelle.
+    secrets: [pg_ingestion, jeton_collecte]
+    volumes:
+      - ./certs/ca.crt:/certs/ca.crt:ro
+    networks:
+      acces: {ipv4_address: 10.40.10.20}
+      donnees: {ipv4_address: 10.40.30.30}
+    depends_on:
+      postgres: {condition: service_healthy}
+
+  passerelle:
+    profiles: [acces]
+    image: nginx:1.27.3-alpine
+    # Seul composant exposé : HTTPS en TLS 1.3, uniquement dans la zone d'accès
+    volumes:
+      - ./passerelle/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs/passerelle:/certs:ro
+    networks:
+      acces: {ipv4_address: 10.40.10.10}
+    ports: ["127.0.0.1:8443:443"]
+    depends_on: [api_collecte]
+
+  catalogue:
+    profiles: [traitements]
+    image: python:3.12-slim
+    # Source web des offres, lue par le crawler de la zone des traitements
+    command: python -m http.server 8001 --directory /site
+    volumes:
+      - ./site_catalogue:/site:ro
+    networks:
+      traitements: {ipv4_address: 10.40.20.20}
+
+  traitements:
+    profiles: [traitements]
+    build: {context: ., dockerfile: Dockerfile.traitements}
+    # Zone des traitements et zone des données : ni la passerelle ni l'API ne lui sont accessibles
+    environment:
+      PG_DSN: "host=postgres port=5432 dbname=attrition user=r_etl sslmode=verify-full sslrootcert=/app/certs/ca.crt"
+      CATALOGUE_URL: "http://catalogue:8001"
+    secrets: [pg_etl]
+    volumes:
+      - ./donnees:/app/donnees
+      - ./journaux:/app/journaux
+      - ./certs/ca.crt:/app/certs/ca.crt:ro
+    networks:
+      traitements: {ipv4_address: 10.40.20.10}
+      donnees: {ipv4_address: 10.40.30.40}
+    depends_on:
+      catalogue: {condition: service_started}
+      postgres: {condition: service_healthy}
+
+  secours-s3:
+    profiles: [secours]
+    # Banc de substitution compatible S3, utilisé uniquement si MinIO ne peut pas être lancé.
+    image: chrislusf/seaweedfs:latest
+    command: server -s3 -s3.config=/etc/seaweedfs/s3.json -dir=/data
+    volumes:
+      - s3data:/data
+      - ./secrets/s3.json:/etc/seaweedfs/s3.json:ro
+    networks: [donnees]
+    ports: ["127.0.0.1:9000:8333"]
+
+networks:
+  acces:
+    ipam:
+      config:
+        - subnet: 10.40.10.0/24       # zone d'accès applicatif
+  traitements:
+    ipam:
+      config:
+        - subnet: 10.40.20.0/24       # zone des traitements
+  donnees:
+    ipam:
+      config:
+        - subnet: 10.40.30.0/24       # zone des données
+volumes:
+  pgdata: {}
+  miniodata: {}
+  s3data: {}
+secrets:
+  pg_admin: {file: ./secrets/pg_admin.txt}
+  minio_user: {file: ./secrets/minio_user.txt}
+  minio_password: {file: ./secrets/minio_password.txt}
+  minio_kms: {file: ./secrets/minio_kms.txt}
+  jeton_collecte: {file: ./secrets/jeton_collecte.txt}
+  pg_ingestion: {file: ./secrets/pg_ingestion.txt}
+  pg_etl: {file: ./secrets/pg_etl.txt}

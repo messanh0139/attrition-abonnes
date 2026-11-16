@@ -1,0 +1,9 @@
+.env
+env.ps1
+secrets/
+donnees/bronze/
+sauvegardes/
+.venv/
+__pycache__/
+.pytest_cache/
+certs/

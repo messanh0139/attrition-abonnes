@@ -1,0 +1,10 @@
+# Mode production : les ports d'administration de PostgreSQL et de MinIO ne sont plus publiés.
+# Docker laisse en effet joindre un port publié depuis les autres réseaux : sans publication,
+# la zone des données n'est plus accessible qu'aux conteneurs qui y sont rattachés.
+# Seule la passerelle HTTPS reste exposée. L'administration passe par « docker compose exec ».
+# Usage : docker compose -f docker-compose.yml -f docker-compose.production.yml --profile minio --profile acces up -d
+services:
+  postgres:
+    ports: !reset []
+  minio:
+    ports: !reset []

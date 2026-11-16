@@ -1,0 +1,9 @@
+ALERTE run 1 : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+ALERTE run 2 : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+ALERTE run 3 : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+ALERTE run 6 : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+ALERTE run 7 : InsufficientPrivilege: permission denied for table variables_clients
+
+ALERTE run 3 : URLError: <urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>
+ALERTE run 4 : InsufficientPrivilege: permission denied for table variables_clients
+

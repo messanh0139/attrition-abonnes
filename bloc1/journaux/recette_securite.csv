@@ -1,0 +1,15 @@
+﻿Essai;Attendu;Conforme;Reponse
+Analyste : écriture dans silver;refus;OUI;ERROR:  permission denied for schema silver
+Analyste : lecture des événements;refus;OUI;ERROR:  permission denied for schema silver
+Analyste : lecture de la couche gold;autorisé;OUI;38495
+Analyste : lecture des pseudonymes;refus;OUI;ERROR:  permission denied for schema silver
+Ingestion : lecture de silver;refus;OUI;ERROR:  permission denied for schema silver
+ETL : suppression d'un événement;refus;OUI;ERROR:  permission denied for table evenements
+Contrainte : prix négatif;refus;OUI;"ERROR:  new row for relation ""offres"" violates check constraint ""offres_prix_mensuel_check"
+Contrainte : fin avant début;refus;OUI;"ERROR:  new row for relation ""abonnements"" violates check constraint ""ck_chronologie"""
+Contrainte : client inexistant;refus;OUI;"ERROR:  insert or update on table ""evenements"" violates foreign key constraint ""evenements"
+Contrainte : type d'événement inconnu;refus;OUI;"ERROR:  new row for relation ""evenements"" violates check constraint ""evenements_type_event"
+Contrainte : doublon client-date gold;refus;OUI;"ERROR:  duplicate key value violates unique constraint ""variables_clients_pkey"""
+Connexion : mauvais mot de passe;refus;OUI;"connection to server at ""127.0.0.1"", port 5433 failed: FATAL:  password authentication fai"
+Connexion sans chiffrement TLS;refus;OUI;"connection to server at ""127.0.0.1"", port 5433 failed: FATAL:  no pg_hba.conf entry for ho"
+Connexion chiffrée : protocole utilisé;autorisé;OUI;TLSv1.3

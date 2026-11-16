@@ -1,0 +1,18 @@
+﻿VERIFICATION DU CORRECTIF DE COUVERTURE
+Date : 31/10/2026
+Execution ETL : 22
+Statut : succes
+Couverture : 2026-09-30
+Lignes Gold : 38495
+Tests automatises : 12 reussis sur 12
+
+Constat :
+La couverture avait avance au 2026-10-31 apres les recettes.
+Le correctif empeche les evenements de test de prolonger
+artificiellement la periode de donnees completes.
+
+Verification :
+Reconstruction du conteneur de traitements.
+Nouvelle execution ETL reussie.
+Couverture revenue au 2026-09-30.
+Tous les tests automatises reussis.

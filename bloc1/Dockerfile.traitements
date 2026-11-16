@@ -1,0 +1,11 @@
+# Conteneur de la zone des traitements (10.40.20.0/24) : exécute l'orchestrateur ETL.
+# Il n'expose aucun port ; il joint la base dans la zone des données et le catalogue dans sa propre zone.
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY config.py orchestrer.py etl.py qualite.py crawl_scrape.py api_geo.py ./
+RUN useradd --create-home service && mkdir -p /app/journaux /app/donnees/bronze && chown -R service /app
+USER service
+# Le mot de passe du rôle r_etl est lu dans le secret Docker au lancement, jamais copié dans l'image
+CMD ["sh", "-c", "PGPASSWORD=$(cat /run/secrets/pg_etl) exec python orchestrer.py --declencheur conteneur --sans-api-geo"]

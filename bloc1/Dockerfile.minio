@@ -1,0 +1,11 @@
+# Construction de MinIO (édition communautaire, licence AGPL v3) à partir de son code source,
+# l'éditeur ne distribuant plus d'image prête à l'emploi.
+#   docker build -f Dockerfile.minio -t minio-local .
+FROM golang:1.24 AS construction
+RUN CGO_ENABLED=0 go install github.com/minio/minio@latest
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY --from=construction /go/bin/minio /usr/local/bin/minio
+EXPOSE 9000 9001
+ENTRYPOINT ["minio"]

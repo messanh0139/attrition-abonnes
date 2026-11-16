@@ -1,0 +1,16 @@
+﻿Zone;Essai;Attendu;Constaté;Conforme;Détail
+accès;Passerelle en HTTPS;autorisé;autorisé;OUI;HTTP 200, TLSv1.3
+accès;Passerelle en TLS 1.2;refusé;refusé;OUI;TLSV1_ALERT_PROTOCOL_VERSION
+accès;Passerelle sans chiffrement (HTTP);refusé;refusé;OUI;HTTP 400
+accès;API de collecte en direct, sans passerelle;refusé;refusé;OUI;connexion refusée, aucun port publié
+accès;Chemin non exposé (/docs);refusé;refusé;OUI;HTTP 404
+accès;Dépôt sans jeton;refusé;refusé;OUI;HTTP 401
+accès;Dépôt d'un événement invalide;refusé;refusé;OUI;HTTP 422
+accès;Dépôt d'un événement valide;autorisé;autorisé;OUI;HTTP 201, E91793467350 pour C00001
+isolation;Zone d'accès vers PostgreSQL, mot de passe valide;refusé;refusé;OUI;timeout expired
+isolation;Zone des traitements vers PostgreSQL, mot de passe valide;refusé;refusé;OUI;timeout expired
+isolation;API de collecte vers PostgreSQL (r_ingestion);autorisé;autorisé;OUI;connexion acceptée
+isolation;Orchestrateur vers PostgreSQL (r_etl);autorisé;autorisé;OUI;connexion acceptée
+isolation;Zone d'accès vers MinIO, sans identifiants;refusé;refusé;OUI;REFUS ConnectTimeout
+isolation;Zone des traitements vers l'API de collecte;refusé;refusé;OUI;TimeoutError: timed out
+traitements;Orchestrateur en conteneur, événement intégré en silver;autorisé;autorisé;OUI;exécution réussie

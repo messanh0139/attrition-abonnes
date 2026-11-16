@@ -1,0 +1,9 @@
+tests
+resultats
+journaux
+modeles
+cache
+__pycache__
+*.csv
+*.ipynb
+gcp

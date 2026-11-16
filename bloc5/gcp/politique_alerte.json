@@ -1,0 +1,31 @@
+{
+  "displayName": "Modèle d'attrition : alertes",
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "Dérive des données ou baisse de performance détectée par le cycle mensuel",
+      "conditionThreshold": {
+        "filter": "metric.type=\"logging.googleapis.com/user/alertes-modele\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0,
+        "duration": "0s",
+        "aggregations": [{"alignmentPeriod": "300s", "perSeriesAligner": "ALIGN_SUM"}]
+      }
+    },
+    {
+      "displayName": "Erreurs serveur de l'API de prédiction",
+      "conditionThreshold": {
+        "filter": "metric.type=\"run.googleapis.com/request_count\" AND resource.type=\"cloud_run_revision\" AND resource.labels.service_name=\"api-attrition\" AND metric.labels.response_code_class=\"5xx\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 5,
+        "duration": "0s",
+        "aggregations": [{"alignmentPeriod": "300s", "perSeriesAligner": "ALIGN_SUM"}]
+      }
+    }
+  ],
+  "notificationChannels": ["__CANAL__"],
+  "documentation": {
+    "content": "Consulter le tableau de bord (onglet Surveillance) et les journaux du job cycle-modele ou du service api-attrition dans Cloud Logging.",
+    "mimeType": "text/markdown"
+  }
+}

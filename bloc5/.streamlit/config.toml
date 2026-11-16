@@ -1,0 +1,6 @@
+﻿# Configuration du tableau de bord : aucune statistique d'utilisation envoyée à Streamlit
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true
